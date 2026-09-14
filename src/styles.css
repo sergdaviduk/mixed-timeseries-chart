@@ -10,22 +10,68 @@
 * { box-sizing: border-box; }
 html, body, #root { margin: 0; min-width: 320px; min-height: 100%; }
 body { min-height: 100vh; }
-button, input, textarea, select { font: inherit; }
-.page { min-height: 100vh; padding: 48px; background: #f7f8fb; }
-.demo-card { max-width: 980px; margin: 0 auto; padding: 26px 28px; border: 1px solid #e7e7ea; border-radius: 18px; background: #ffffff; box-shadow: 0 14px 40px rgba(18, 24, 40, 0.06); }
-.chart-shell { width: 100%; min-width: 0; overflow: visible; border: 1px solid #c8c8c8; background: #fde1e3; }
-.chart-tooltip { min-width: 260px; padding: 14px 16px 15px; border: 1px solid #a6a6a6; border-radius: 7px; background: rgba(255,255,255,.97); box-shadow: 0 6px 16px rgba(0,0,0,.22), 0 0 0 1px rgba(0,0,0,.02); font-size: 18px; line-height: 1.24; color: #242424; backdrop-filter: blur(2px); }
-.chart-tooltip__date { margin-bottom: 3px; font-size: 16px; }
-.chart-tooltip__row { display: flex; align-items: center; gap: 9px; white-space: nowrap; }
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #ffffff;
+}
+
+.chart-demo {
+  width: min(800px, calc(100vw - 48px));
+}
+
+.chart-shell {
+  width: 100%;
+  min-width: 0;
+  overflow: visible;
+  border: 1px solid #bdbdbd;
+  background: #f9dfe2;
+}
+
+.chart-tooltip {
+  min-width: 250px;
+  padding: 13px 15px 14px;
+  border: 1px solid #9d9d9d;
+  border-radius: 6px;
+  background: rgba(255,255,255,.98);
+  box-shadow: 0 5px 14px rgba(0,0,0,.20);
+  font-size: 17px;
+  line-height: 1.26;
+  color: #242424;
+}
+
+.chart-tooltip__date {
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.chart-tooltip__row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+}
+
 .chart-tooltip__row strong { font-weight: 800; }
-.dot { width: 20px; height: 20px; flex: 0 0 20px; border-radius: 50%; }
-.dot--area { background: #FFE867; }
-.dot--bar { background: #3976F6; }
-.dot--spline { background: #178A1A; }
-.dot--line { background: #B000F5; }
+
+.dot {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  border-radius: 50%;
+}
+
+.dot--area { background: #ffe867; }
+.dot--bar { background: #3976f6; }
+.dot--spline { background: #178a1a; }
+.dot--line { background: #b000f5; }
+
 @media (max-width: 700px) {
-  .page { padding: 20px; }
-  .demo-card { padding: 16px; }
-  .chart-tooltip { min-width: 220px; font-size: 15px; }
+  .page { padding: 12px; }
+  .chart-demo { width: calc(100vw - 24px); }
+  .chart-tooltip { min-width: 215px; font-size: 14px; }
   .dot { width: 14px; height: 14px; flex-basis: 14px; }
 }
